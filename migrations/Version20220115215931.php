@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Migrations;
+namespace DoctrineMigrations;
 
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\Migrations\AbstractMigration;
@@ -14,7 +14,7 @@ final class Version20220115215931 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return '';
+        return 'category table creation';
     }
 
     public function up(Schema $schema): void

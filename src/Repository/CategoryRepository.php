@@ -20,7 +20,7 @@ class CategoryRepository extends ServiceEntityRepository
     }
 
     /**
-     * @return array Returns an Category records as array
+     * @return array Returns all Category records as array
      */
     public function findAllAsArray() : array{
         return $this->createQueryBuilder('c')
@@ -37,6 +37,6 @@ class CategoryRepository extends ServiceEntityRepository
             ->andWhere('c.name = :val')
             ->setParameter('val', $value)
             ->getQuery()
-            ->getSingleResult();
+            ->getOneOrNullResult();
     }
 }

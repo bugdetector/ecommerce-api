@@ -32,11 +32,6 @@ class ProductRepository extends ServiceEntityRepository
 
     public function findByName($value)
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.name = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->getQuery()
-            ->getOneOrNullResult();
+        return $this->findOneBy(["name" => $value]);
     }
 }
